@@ -51,42 +51,6 @@ class Snake:
         if self.direction == "RIGHT":
             self.x[0] += SIZE
 
-        self.draw()        
-
-
-    def step(self):
-
-        for i in range(self.length-1,0,-1):
-            self.x[i] = self.x[i-1]
-            self.y[i] = self.y[i-1]
-
-        if self.direction == "UP":
-            self.y[0] -= SIZE
-        if self.direction == "DOWN":
-            self.y[0] += SIZE
-        if self.direction == "LEFT":
-            self.x[0] -= SIZE
-        if self.direction == "RIGHT":
-            self.x[0] += SIZE
-
-        self.draw()
-
-
-    def step(self):
-
-        for i in range(self.length-1,0,-1):
-            self.x[i] = self.x[i-1]
-            self.y[i] = self.y[i-1]
-
-        if self.direction == "UP":
-            self.y[0] -= SIZE
-        if self.direction == "DOWN":
-            self.y[0] += SIZE
-        if self.direction == "LEFT":
-            self.x[0] -= SIZE
-        if self.direction == "RIGHT":
-            self.x[0] += SIZE
-
         self.draw()
 
 
