@@ -1,8 +1,5 @@
 import time
-import time
-import time
 import pygame
-import random
 import random
 from pygame.locals import *
 
@@ -28,25 +25,13 @@ class Snake:
     def __init__(self, parent_screen, length):
         self.length = length
         self.direction = "DOWN"
-class Snake:
-    def __init__(self, parent_screen, length):
-        self.length = length
-        self.direction = "DOWN"
         self.block = pygame.image.load("resources/block.jpg").convert()
-        self.x = [SIZE]*length
-        self.y = [SIZE]*length
-        self.x = [SIZE]*length
-        self.y = [SIZE]*length
         self.x = [SIZE]*length
         self.y = [SIZE]*length
         self.ps = parent_screen
 
     def draw(self):
         self.ps.fill((110, 110, 5))
-        for i in range(self.length):
-            self.ps.blit(self.block, (self.x[i], self.y[i]))
-        for i in range(self.length):
-            self.ps.blit(self.block, (self.x[i], self.y[i]))
         for i in range(self.length):
             self.ps.blit(self.block, (self.x[i], self.y[i]))
         pygame.display.flip()
@@ -109,8 +94,6 @@ class Game:
     def __init__(self):
         pygame.init()
         self.surface = pygame.display.set_mode((1000,800))
-        self.surface = pygame.display.set_mode((1000,800))
-        self.surface = pygame.display.set_mode((1000,800))
         self.surface.fill((110, 110, 5))  
         self.snake = Snake(self.surface, 1)
         self.snake.draw()
@@ -138,27 +121,6 @@ class Game:
         score = font.render(f"Score: {self.snake.length}", True, (0,0,255))
         self.surface.blit(score, (800, 10))
 
-    def play(self):
-        self.snake.step()
-        self.apple.draw()
-        self.score()
-        pygame.display.flip()
-
-    def collision(self):
-        return self.snake.x[0] == self.apple.x and self.snake.y[0] == self.apple.y
-
-    def scollision(self):
-        if self.snake.length > 1:
-            for i in range(1,self.snake.length):
-                if self.snake.x[0] == self.snake.x[i] and self.snake.y[0] == self.snake.y[i]:
-                    return True
-        return False
-
-    def score(self):
-        font = pygame.font.SysFont('arial',40,True)
-        score = font.render(f"Score: {self.snake.length}", True, (0,0,255))
-        self.surface.blit(score, (800, 10))
-
     def run(self):
         running = True
         
@@ -170,15 +132,11 @@ class Game:
 
                     if event.key == K_UP:
                         self.snake.direction = "UP"
-                        self.snake.direction = "UP"
                     if event.key == K_DOWN:
-                        self.snake.direction = "DOWN"
                         self.snake.direction = "DOWN"
                     if event.key == K_LEFT:
                         self.snake.direction = "LEFT"
-                        self.snake.direction = "LEFT"
                     if event.key == K_RIGHT:
-                        self.snake.direction = "RIGHT"
                         self.snake.direction = "RIGHT"
 
                 elif event.type == QUIT:
